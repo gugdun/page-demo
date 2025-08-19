@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="apple-mobile-web-app-title" content="Lunair" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lunair</title>
+    <style>
+      :root {
+        font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+        line-height: 1.5;
+        font-weight: 400;
+
+        color-scheme: light dark;
+        color: rgba(255, 255, 255, 0.87);
+        background-color: #242424;
+
+        font-synthesis: none;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      body {
+        margin: 0;
+        display: flex;
+        place-items: center;
+        min-width: 320px;
+        min-height: 100vh;
+      }
+
+      .loader {
+        width: 48px;
+        height: 48px;
+        display: inline-block;
+        position: relative;
+        background: #fff;
+        box-sizing: border-box;
+        animation: zeroRotation 1s ease infinite alternate-reverse;
+      }
+
+      .loader-container {
+        width: 100%;
+        text-align: center;
+      }
+
+      @keyframes zeroRotation {
+        0% {
+          transform: scale(1) rotate(0deg);
+        }
+        100% {
+          transform: scale(0) rotate(360deg);
+        }
+      }
+
+      @media (prefers-color-scheme: light) {
+        :root {
+          color: #213547;
+          background-color: #ffffff;
+        }
+
+        .loader {
+          background: #213547;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="loader-container" class="loader-container">
+      <span class="loader"></span>
+    </div>
+    <div id="app"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
