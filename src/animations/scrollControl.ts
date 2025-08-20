@@ -29,7 +29,7 @@ export function connectScrollToTimeline(
     "touchmove",
     (e) => {
       const dy = touchStart - e.touches[0].clientY;
-      target += dy * 10;
+      target += dy * 5;
       target = Math.max(0, Math.min(maxScroll, target));
       touchStart = e.touches[0].clientY;
     },

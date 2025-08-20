@@ -16,7 +16,10 @@ export function App() {
 
     const heroTl = createHeroAnimation(heroRef.current);
     const aboutTl = createAboutAnimation(aboutRef.current);
-    const master = createMasterTimeline([heroTl, aboutTl]);
+    const master = createMasterTimeline([
+      { tl: heroTl },
+      { tl: aboutTl, pos: "-=0.25" },
+    ]);
 
     master.tweenTo(1.0, {
       onComplete: () => connectScrollToTimeline(master, 1.0),

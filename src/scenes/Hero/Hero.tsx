@@ -15,7 +15,9 @@ export function Hero({ register }: { register: (el: HTMLElement) => void }) {
   return (
     <section ref={container} class="hero">
       <h1 class="title">Lunair</h1>
-      <h3 class="subtitle">“With Lunair, every flight is a step into the future.”</h3>
+      <h3 class="subtitle">
+        “With Lunair, every flight is a step into the future.”
+      </h3>
       <img class="cloud-corner" src={cloudCorner} />
       <img class="plane" src={plane} />
     </section>
