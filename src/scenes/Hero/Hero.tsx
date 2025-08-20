@@ -1,6 +1,6 @@
 import { useRef, useLayoutEffect } from "preact/hooks";
 import cloudCorner from "../../assets/cloud-corner.webp";
-import "./hero.css";
+import "./hero.scss";
 
 export function Hero({ register }: { register: (el: HTMLElement) => void }) {
   const container = useRef<HTMLDivElement>(null);
