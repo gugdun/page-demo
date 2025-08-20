@@ -1,5 +1,10 @@
 import { render } from 'preact'
-import { App } from './app.tsx'
+import { App } from './App.tsx'
+import { LoaderTransition } from './LoaderTransition.tsx';
 
-document.getElementById('loader-container')?.remove();
-render(<App />, document.getElementById('app')!)
+render(
+    <LoaderTransition>
+        <App />
+    </LoaderTransition>,
+    document.getElementById('app')!
+);

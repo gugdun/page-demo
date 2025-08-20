@@ -18,7 +18,7 @@
 
         color-scheme: light dark;
         color: rgba(255, 255, 255, 0.87);
-        background-color: #242424;
+        background: linear-gradient(to bottom, #020111 60%,#20202c 100%);
 
         font-synthesis: none;
         text-rendering: optimizeLegibility;
@@ -26,15 +26,35 @@
         -moz-osx-font-smoothing: grayscale;
       }
 
-      body {
+      * {
         margin: 0;
-        display: flex;
-        place-items: center;
-        min-width: 320px;
-        min-height: 100vh;
+        padding: 0;
       }
 
-      .loader {
+      body {
+        width: 100dvw;
+        height: 100dvh;
+      }
+
+      #app {
+        display: grid;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        touch-action: none;
+      }
+
+      #loader-container {
+        position: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+      }
+
+      #loader-container span {
         width: 48px;
         height: 48px;
         display: inline-block;
@@ -42,11 +62,6 @@
         background: #fff;
         box-sizing: border-box;
         animation: zeroRotation 1s ease infinite alternate-reverse;
-      }
-
-      .loader-container {
-        width: 100%;
-        text-align: center;
       }
 
       @keyframes zeroRotation {
@@ -57,22 +72,11 @@
           transform: scale(0) rotate(360deg);
         }
       }
-
-      @media (prefers-color-scheme: light) {
-        :root {
-          color: #213547;
-          background-color: #ffffff;
-        }
-
-        .loader {
-          background: #213547;
-        }
-      }
     </style>
   </head>
   <body>
-    <div id="loader-container" class="loader-container">
-      <span class="loader"></span>
+    <div id="loader-container">
+      <span></span>
     </div>
     <div id="app"></div>
     <script type="module" src="/src/main.tsx"></script>
