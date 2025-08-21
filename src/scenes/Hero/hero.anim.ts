@@ -7,7 +7,7 @@ export function createHeroAnimation(container: HTMLElement) {
   const titleTl = gsap
     .timeline()
     .fromTo(title, { y: 200, opacity: 0 }, { y: 25, opacity: 1, duration: 1 })
-    .to(title, { y: 0, duration: 1, ease: "none" })
+    .to(title, { y: 0, duration: 1 })
     .to(title, { y: -100, opacity: 0, duration: 1, ease: "none" });
 
   const subtitle = container.querySelector(".subtitle");
@@ -33,7 +33,7 @@ export function createHeroAnimation(container: HTMLElement) {
     .fromTo(
       plane,
       { x: 960, y: 500, opacity: 0 },
-      { x: 960, y: 500, opacity: 0, duration: 1.5, ease: "none" }
+      { x: 960, y: 500, opacity: 0, duration: 1.75, ease: "none" }
     )
     .to(plane, { x: 0, y: 0, opacity: 1, duration: 1, ease: "none" })
     .to(plane, { x: -960, y: -500, opacity: 0, duration: 1, ease: "none" });

@@ -1,5 +1,6 @@
-import type { Section } from "../types/section";
 import gsap from "gsap";
+
+import type { Section } from "../types/section";
 
 export function createMasterTimeline(sections: Section[]) {
   const tl = gsap.timeline();

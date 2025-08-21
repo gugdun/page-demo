@@ -1,4 +1,5 @@
 import { useRef, useLayoutEffect } from "preact/hooks";
+
 import "./about.scss";
 
 export function About({ register }: { register: (el: HTMLElement) => void }) {
