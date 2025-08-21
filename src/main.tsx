@@ -1,7 +1,6 @@
 import { render } from "preact";
-
-import { App } from "./App.tsx";
-import { LoaderTransition } from "./LoaderTransition.tsx";
+import { App } from "./App";
+import { LoaderTransition } from "./LoaderTransition";
 
 import "./styles/main.scss";
 

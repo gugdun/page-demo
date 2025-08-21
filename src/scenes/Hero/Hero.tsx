@@ -1,11 +1,12 @@
 import { useRef, useLayoutEffect } from "preact/hooks";
+import type { SceneProps } from "../../types";
 
 import cloudCorner from "../../assets/cloud-corner.webp";
 import plane from "../../assets/plane.webp";
 
 import "./hero.scss";
 
-export function Hero({ register }: { register: (el: HTMLElement) => void }) {
+export function Hero({ register }: SceneProps) {
   const container = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {

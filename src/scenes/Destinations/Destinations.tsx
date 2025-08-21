@@ -1,8 +1,9 @@
 import { useRef, useLayoutEffect } from "preact/hooks";
+import type { SceneProps } from "../../types";
 
 import "./destinations.scss";
 
-export function Destinations({ register }: { register: (el: HTMLElement) => void }) {
+export function Destinations({ register }: SceneProps) {
   const container = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
