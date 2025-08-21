@@ -1,20 +1,18 @@
-import { useEffect, useRef } from "preact/hooks";
-import { createMasterTimeline } from "./animations/masterTimeline";
-import { connectScrollToTimeline } from "./animations/scrollControl";
-
-import { Hero } from "./scenes/Hero/Hero";
-import { createHeroAnimation } from "./scenes/Hero/hero.anim";
-
-import { About } from "./scenes/About/About";
-import { createAboutAnimation } from "./scenes/About/about.anim";
-
-import { Destinations } from "./scenes/Destinations/Destinations";
-import { createDestinationsAnimation } from "./scenes/Destinations/destinations.anim";
+import { useEffect, useRef, useState } from "preact/hooks";
+import { createMasterTimeline, connectScrollToTimeline } from "./animations";
+import { ScrollBar } from "./components/ScrollBar";
+import { Hero, createHeroAnimation } from "./scenes/Hero";
+import { About, createAboutAnimation } from "./scenes/About";
+import {
+  Destinations,
+  createDestinationsAnimation,
+} from "./scenes/Destinations";
 
 export function App() {
   const heroRef = useRef<HTMLElement | null>(null);
   const aboutRef = useRef<HTMLElement | null>(null);
   const destinationsRef = useRef<HTMLElement | null>(null);
+  const [timelineProgress, setTimelineProgress] = useState(0);
 
   useEffect(() => {
     if (!heroRef.current || !aboutRef.current || !destinationsRef.current)
@@ -30,8 +28,15 @@ export function App() {
       { tl: destinationsTl },
     ]);
 
-    master.tweenTo(1.0, {
-      onComplete: () => connectScrollToTimeline(master, 1.0),
+    const introEnd = 1.0;
+    master.tweenTo(introEnd, {
+      onComplete: () => connectScrollToTimeline(master, introEnd),
+    });
+
+    const scrollableDuration = master.duration() - introEnd;
+    master.eventCallback("onUpdate", () => {
+      const progressTime = master.progress() * master.duration();
+      setTimelineProgress((progressTime - introEnd) / scrollableDuration);
     });
   }, []);
 
@@ -40,6 +45,7 @@ export function App() {
       <Hero register={(el) => (heroRef.current = el)} />
       <About register={(el) => (aboutRef.current = el)} />
       <Destinations register={(el) => (destinationsRef.current = el)} />
+      <ScrollBar progress={timelineProgress} />
     </>
   );
 }
