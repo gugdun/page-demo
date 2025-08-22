@@ -38,10 +38,7 @@ export function createHeroAnimation(container: HTMLElement) {
     .to(plane, { x: 0, y: 0, opacity: 1, duration: 1, ease: "none" })
     .to(plane, { x: -960, y: -500, opacity: 0, duration: 1, ease: "none" });
 
-  tl.add(titleTl, 0);
-  tl.add(subtitleTl, 0);
-  tl.add(cloudCornerTl, 0);
-  tl.add(planeTl, 0);
+  tl.add(titleTl, 0).add(subtitleTl, 0).add(cloudCornerTl, 0).add(planeTl, 0);
 
   return tl;
 }

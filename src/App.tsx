@@ -24,8 +24,8 @@ export function App() {
 
     const master = createMasterTimeline([
       { tl: heroTl },
-      { tl: aboutTl, pos: "-=0.25" },
-      { tl: destinationsTl },
+      { tl: aboutTl, pos: "-=0.5" },
+      { tl: destinationsTl, pos: "-=0.25" },
     ]);
 
     const introEnd = 1.0;

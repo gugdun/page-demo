@@ -32,5 +32,5 @@ export function ScrollBar({ progress }: ScrollBarProps) {
     scrollbar.current.style.transform = `translateY(${offset}px)`;
   }, [progress, windowSize]);
 
-  return <div ref={scrollbar} class="scrollBar"></div>;
+  return <div ref={scrollbar} class="scrollBar hidden"></div>;
 }

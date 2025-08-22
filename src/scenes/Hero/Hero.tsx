@@ -18,9 +18,9 @@ export function Hero({ register }: SceneProps) {
   return (
     <section ref={container} class="hero">
       <h1 class="title">Lunair</h1>
-      <h3 class="subtitle">
+      <h2 class="subtitle">
         “With Lunair, every flight is a step into the future.”
-      </h3>
+      </h2>
       <img class="cloud-corner" src={cloudCorner} />
       <img class="plane" src={plane} />
     </section>
