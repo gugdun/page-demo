@@ -7,25 +7,38 @@ import {
   Destinations,
   createDestinationsAnimation,
 } from "./scenes/Destinations";
+import {
+  Testimonials,
+  createTestimonialsAnimation,
+} from "./scenes/Testimonials";
 
 export function App() {
   const heroRef = useRef<HTMLElement | null>(null);
   const aboutRef = useRef<HTMLElement | null>(null);
   const destinationsRef = useRef<HTMLElement | null>(null);
+  const testimonialsRef = useRef<HTMLElement | null>(null);
   const [timelineProgress, setTimelineProgress] = useState(0);
 
   useEffect(() => {
-    if (!heroRef.current || !aboutRef.current || !destinationsRef.current)
+    if (
+      !heroRef.current ||
+      !aboutRef.current ||
+      !destinationsRef.current ||
+      !testimonialsRef.current
+    ) {
       return;
+    }
 
     const heroTl = createHeroAnimation(heroRef.current);
     const aboutTl = createAboutAnimation(aboutRef.current);
     const destinationsTl = createDestinationsAnimation(destinationsRef.current);
+    const testimonialsTl = createTestimonialsAnimation(testimonialsRef.current);
 
     const master = createMasterTimeline([
       { tl: heroTl },
       { tl: aboutTl, pos: "-=0.5" },
       { tl: destinationsTl, pos: "-=0.25" },
+      { tl: testimonialsTl, pos: "-=0.25" },
     ]);
 
     const introEnd = 1.0;
@@ -45,6 +58,7 @@ export function App() {
       <Hero register={(el) => (heroRef.current = el)} />
       <About register={(el) => (aboutRef.current = el)} />
       <Destinations register={(el) => (destinationsRef.current = el)} />
+      <Testimonials register={(el) => (testimonialsRef.current = el)} />
       <ScrollBar progress={timelineProgress} />
     </>
   );
