@@ -48,11 +48,11 @@ export function createTestimonialsAnimation(container: HTMLElement) {
     .timeline()
     .fromTo(
       cloud,
-      { y: 400, opacity: 0 },
+      { y: 500, opacity: 0 },
       { y: 200, opacity: 0.15, duration: 1, ease: "none" }
     )
-    .to(cloud, { y: -200, opacity: 0.15, duration: 3, ease: "none" })
-    .to(cloud, { y: -400, opacity: 0, duration: 1, ease: "none" });
+    .to(cloud, { y: -100, opacity: 0.15, duration: 3, ease: "none" })
+    .to(cloud, { y: -500, opacity: 0, duration: 1, ease: "none" });
 
   tl.add(titleTl, 0)
     .add(quote1Tl, 0)
