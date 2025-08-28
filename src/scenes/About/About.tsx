@@ -16,7 +16,7 @@ export function About({ register }: SceneProps) {
 
   return (
     <section ref={container} class="about">
-      <img class="cloud" src={cloud}></img>
+      <img class="cloud" src={cloud} alt="Cloud"></img>
       <h1 class="title">
         <p>Inspired by the Sky.</p>
         <p>Powered by Innovation.</p>

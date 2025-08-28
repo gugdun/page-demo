@@ -23,17 +23,17 @@ export function Destinations({ register }: SceneProps) {
         <div id="card1" class="card">
           <h2 class="title">Paris</h2>
           <p class="description">The city of lights awaits you</p>
-          <img class="picture" src={paris}></img>
+          <img class="picture" src={paris} alt="Paris"></img>
         </div>
         <div id="card2" class="card">
           <h2 class="title">New York</h2>
           <p class="description">Never sleep above the clouds</p>
-          <img class="picture" src={newYork}></img>
+          <img class="picture" src={newYork} alt="New York"></img>
         </div>
         <div id="card3" class="card">
           <h2 class="title">Tokyo</h2>
           <p class="description">Fly into the future</p>
-          <img class="picture" src={tokyo}></img>
+          <img class="picture" src={tokyo} alt="Tokyo"></img>
         </div>
       </div>
     </section>
