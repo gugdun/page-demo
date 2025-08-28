@@ -17,7 +17,7 @@ export function Testimonials({ register }: SceneProps) {
   return (
     <section ref={container} class="testimonials">
       <h1 class="title">What our passengers say</h1>
-      <img class="cloud" src={cloud}></img>
+      <img class="cloud" src={cloud} alt="Cloud"></img>
       <div class="cards">
         <div id="quote1" class="card">
             <p class="quote">“Lunair made flying a pleasure. I never thought the road could be so easy!”</p>

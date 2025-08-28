@@ -21,8 +21,8 @@ export function Hero({ register }: SceneProps) {
       <h2 class="subtitle">
         “With Lunair, every flight is a step into the future.”
       </h2>
-      <img class="cloud-corner" src={cloudCorner} />
-      <img class="plane" src={plane} />
+      <img class="cloud-corner" src={cloudCorner} alt="Cloud" />
+      <img class="plane" src={plane} alt="Plane" />
     </section>
   );
 }
